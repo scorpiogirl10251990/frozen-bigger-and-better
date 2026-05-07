@@ -1,0 +1,187 @@
+export default function IvyFrozenAdventure() {
+  const playSong = (song) => {
+    const audio = new Audio(song);
+    audio.play();
+  };
+
+  const quotes = [
+    "Ivy, your magic shines brighter than Elsa's snowflakes!",
+    "Princess Ivy can do brave things every day!",
+    "Sven says Ivy gives the BEST hugs in Arendelle!",
+    "Olaf thinks Ivy is warmer than summer sunshine!"
+  ];
+
+  const story = `
+  One snowy night in Arendelle, Princess Ivy discovered Olaf sliding down a mountain on a giant waffle.
+  “Ivy! The syrup volcano is erupting again!” Olaf shouted.
+
+  Elsa accidentally sneezed and turned Sven into a sparkly snow-reindeer burrito.
+  Anna laughed so hard she fell into a pile of marshmallows.
+
+  Ivy bravely rode on Sven's back through Candy Cane Forest to save the royal pancakes.
+  Along the way, she met dancing snowmen who only spoke in chicken noises.
+
+  “Bawk bawk, Princess Ivy!” they cheered.
+
+  Ivy used her super giggle powers to stop the waffle storm and everyone celebrated with hot chocolate.
+
+  Before bedtime, Elsa tucked Ivy into bed with a fluffy snow blanket and whispered,
+  “The kingdom is safe because of you, Princess Ivy.”
+
+  Olaf added, “And because waffles are delicious.”
+
+  The End.
+  `;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-cyan-200 via-blue-200 to-indigo-300 text-center p-4 overflow-x-hidden">
+      <div className="max-w-md mx-auto bg-white/80 rounded-3xl shadow-2xl p-5 backdrop-blur-lg">
+        <h1 className="text-4xl font-bold text-cyan-700 mb-2 animate-bounce">
+          ❄️ Ivy's Frozen Adventure ❄️
+        </h1>
+
+        <p className="text-lg text-indigo-700 mb-4">
+          Welcome Princess Ivy to the magical kingdom of snow!
+        </p>
+
+        <img
+          src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1200&auto=format&fit=crop"
+          alt="Snowy castle"
+          className="rounded-3xl shadow-lg mb-4 w-full h-52 object-cover"
+        />
+
+        <div className="grid grid-cols-2 gap-3 mb-6">
+          <button
+            onClick={() => playSong('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')}
+            className="bg-cyan-500 text-white rounded-2xl p-3 shadow-lg active:scale-95"
+          >
+            🎵 Let It Go
+          </button>
+
+          <button
+            onClick={() => playSong('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')}
+            className="bg-indigo-500 text-white rounded-2xl p-3 shadow-lg active:scale-95"
+          >
+            ☃️ Olaf Song
+          </button>
+        </div>
+
+        <div className="bg-cyan-100 rounded-3xl p-4 mb-6 shadow-inner">
+          <h2 className="text-2xl font-bold text-cyan-700 mb-2">
+            ❄️ Catch Snowflakes Game
+          </h2>
+
+          <p className="text-sm text-indigo-700 mb-2">
+            Help Ivy beat Elsa by tapping snowflakes!
+          </p>
+
+          <div className="flex justify-center gap-3 flex-wrap">
+            {['❄️','❄️','❄️','❄️','❄️'].map((flake, i) => (
+              <button
+                key={i}
+                className="text-4xl animate-bounce active:scale-150"
+              >
+                {flake}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-orange-100 rounded-3xl p-4 mb-6 shadow-inner">
+          <h2 className="text-2xl font-bold text-orange-700 mb-2">
+            🦌 Feed Sven Snacks
+          </h2>
+
+          <p className="text-sm mb-3 text-orange-800">
+            Tap treats to feed Sven yummy snacks!
+          </p>
+
+          <div className="flex justify-center gap-4 text-5xl">
+            <button className="active:scale-125">🥕</button>
+            <button className="active:scale-125">🍎</button>
+            <button className="active:scale-125">🥬</button>
+          </div>
+        </div>
+
+        <div className="bg-pink-100 rounded-3xl p-4 mb-6">
+          <h2 className="text-2xl font-bold text-pink-700 mb-3">
+            🎨 Coloring Pages
+          </h2>
+
+          <div className="grid grid-cols-2 gap-3">
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
+              alt="Princess coloring"
+              className="rounded-2xl h-32 object-cover"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop"
+              alt="Snowman coloring"
+              className="rounded-2xl h-32 object-cover"
+            />
+          </div>
+
+          <p className="text-sm mt-3 text-pink-700">
+            Ask mommy or daddy to print these for Princess Ivy!
+          </p>
+        </div>
+
+        <div className="bg-white rounded-3xl p-4 mb-6 shadow-lg">
+          <h2 className="text-2xl font-bold text-indigo-700 mb-3">
+            💙 Special Quotes for Ivy
+          </h2>
+
+          <div className="space-y-3">
+            {quotes.map((quote, i) => (
+              <div
+                key={i}
+                className="bg-cyan-50 rounded-2xl p-3 text-indigo-800"
+              >
+                {quote}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-yellow-50 rounded-3xl p-4 mb-6 shadow-lg text-left">
+          <h2 className="text-2xl font-bold text-yellow-700 mb-3 text-center">
+            🌙 Ivy's Bedtime Story
+          </h2>
+
+          <p className="text-gray-700 whitespace-pre-line text-sm leading-7">
+            {story}
+          </p>
+        </div>
+
+        <div className="bg-indigo-100 rounded-3xl p-4 shadow-lg">
+          <h2 className="text-2xl font-bold text-indigo-700 mb-3">
+            💌 Messages for Ivy
+          </h2>
+
+          <div className="space-y-3 text-left text-indigo-900">
+            <div className="bg-white rounded-2xl p-3">
+              <strong>Elsa:</strong> “Goodnight Ivy! Tomorrow is a magical day. Use kind words and no fit throwing, okay?”
+            </div>
+
+            <div className="bg-white rounded-2xl p-3">
+              <strong>Anna:</strong> “Remember Ivy, deep breaths and big hugs are better than tantrums!”
+            </div>
+
+            <div className="bg-white rounded-2xl p-3">
+              <strong>Olaf:</strong> “Warm hugs make every day happier! And no stompy feet!”
+            </div>
+
+            <div className="bg-white rounded-2xl p-3">
+              <strong>Sven:</strong> “Mooooose reindeer wisdom says: be sweet and listen tomorrow!”
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 text-cyan-800 text-sm">
+          Made with snowflake magic for Princess Ivy ✨
+        </div>
+      </div>
+    </div>
+  );
+}
